@@ -1,16 +1,19 @@
 {
-  "name": "@kappal/next-ui",
-  "version": "1.0.0",
-  "description": "kappal components",
+  "name": "@kappalsoftware/next-ui-system",
+  "version": "1.0.2",
+  "description": "kappal ui components",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KappalSoftware/next-ui.git"
+    "url": "git+https://github.com/KappalSoftware/next-ui.git"
   },
   "author": "Dhanasekar",
   "license": "MIT",
   "scripts": {
+    "generate-index": "node generate-index.js",
+    "generate-types": "node generate-types.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run generate-index && npm run generate-types && next build",
+    "prepublishOnly": "npm run generate-index && npm run generate-types",
     "start": "next start",
     "lint": "next lint"
   },
@@ -30,5 +33,15 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "homepage": "https://github.com/KappalSoftware/next-ui#readme"
+  "homepage": "https://github.com/KappalSoftware/next-ui#readme",
+  "bugs": {
+    "url": "https://github.com/KappalSoftware/next-ui/issues"
+  },
+  "main": "app/index.js",
+  "types": "types/index.d.ts",
+  "keywords": [
+    "next-ui",
+    "design-system",
+    "ui"
+  ]
 }
