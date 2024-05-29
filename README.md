@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# @kappalsoftware/next-ui-system
 
-## Getting Started
+## Overview
 
-First, run the development server:
+`@kappalsoftware/next-ui-system` is a powerful and flexible design system built on top of Next-UI. It provides a comprehensive set of reusable UI components designed to accelerate the development of modern web applications. With hundreds of pre-built components, this system ensures consistency and efficiency in your projects.
+
+## Features
+
+- **Reusable Components**: A wide range of pre-built UI components like buttons, forms, cards, and more.
+- **Customizable**: Easily customize the components using TailwindCSS to match your project's style and requirements.
+- **TypeScript Support**: Fully typed with TypeScript for better development experience and error checking.
+- **Optimized for Next.js**: Seamlessly integrates with Next.js projects.
+- **Multilingual Support**: Built-in support for multiple languages, making your application accessible to a global audience.
+- **Easy Localization**: Components support localization and internationalization out-of-the-box.
+- **Data Conversion Utilities**: Includes utilities for data formatting and conversion, simplifying data manipulation tasks.
+
+## Installation
+
+To install `@kappalsoftware/next-ui-system`, use npm or yarn:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install @kappalsoftware/next-ui-system
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn add @kappalsoftware/next-ui-system
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+Start using the components in your project by importing them from `@kappalsoftware/next-ui-system`. Here is an example of how to use some of the components:
 
-To learn more about Next.js, take a look at the following resources:
+```typescript
+import React from 'react';
+import { KappalButton, KappalSelect } from '@kappalsoftware/next-ui-system';
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+const App = () => (
+  <div>
+    <KappalButton>Click Me</KappalButton>
+    <KappalSelect options={['Option 1', 'Option 2']} />
+  </div>
+);
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+export default App;
+```
 
-## Deploy on Vercel
+<!-- ### Localization Example
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Here’s an example of how to use the localization support:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```typescript
+import React from 'react';
+import { KappalButton } from '@kappalsoftware/next-ui-system';
+import { useTranslation } from 'react-i18next';
+
+const App = () => {
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      <KappalButton>{t('click_me')}</KappalButton>
+    </div>
+  );
+};
+
+export default App;
+``` -->
+
+## Available Components
+
+We provide a variety of components to help you build your application quickly and efficiently. Some of the available components include:
+
+- `KappalAccordion`
+- `KappalAutoComplete`
+- `KappalAvatar`
+- `KappalBadge`
+- `KappalBreadcrumbs`
+- `KappalButton`
+- `KappalCard`
+- `KappalInput`
+- `KappalSelect`
+- ...and many more.
+
+For a complete list of components and their usage, please refer to the [documentation](#).
+
+## TypeScript Support
+
+`@kappalsoftware/next-ui-system` includes TypeScript type declarations, providing a better development experience with autocompletion and type checking. The types are automatically generated and included in the package, so you don't need to do anything extra to use them.
+
+## Contributing
+
+We welcome contributions to improve and expand `@kappalsoftware/next-ui-system`. If you have suggestions, bug reports, or feature requests, please open an issue or submit a pull request on our [GitHub repository](https://github.com/KappalSoftware/next-ui).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/KappalSoftware/next-ui/blob/main/LICENSE) file for more details.
+
+## Acknowledgements
+
+`@kappalsoftware/next-ui-system` is built on top of the amazing [Next-UI](https://nextui.org/), and we are grateful for the contributions of the Next-UI team and community.
