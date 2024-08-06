@@ -30,6 +30,18 @@ yarn add @kappalsoftware/next-ui-system
 
 ## Usage
 
+Update your next.config.js
+
+```typescript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    transpilePackages: ['@kappalsoftware/next-ui-system'],
+    reactStrictMode: true,
+}
+module.exports = nextConfig
+```
+
+
 Start using the components in your project by importing them from `@kappalsoftware/next-ui-system`. Here is an example of how to use some of the components:
 
 ```typescript
@@ -87,7 +99,7 @@ For a complete list of components and their usage, please refer to the [document
 
 ## TypeScript Support
 
-`@kappalsoftware/next-ui-system` includes TypeScript type declarations, providing a better development experience with autocompletion and type checking. The types are automatically generated and included in the package, so you don't need to do anything extra to use them.
+`@kappalsoftware/next-ui-system` includes TypeScript type declarations, providing a better development experience with autocompletion and type checking. The types are automatically generated and included in the package, so you don't need to do anything extra to use them. Make sure you are making necessary changes in your nextjs configuration to handle the typescript code.
 
 ## Contributing
 

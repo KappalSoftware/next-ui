@@ -1,6 +1,6 @@
 {
   "name": "@kappalsoftware/next-ui-system",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "kappal ui components",
   "repository": {
     "type": "git",
@@ -24,14 +24,14 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "20.12.13",
+    "@types/react": "18.3.3",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "5.4.5"
   },
   "homepage": "https://github.com/KappalSoftware/next-ui#readme",
   "bugs": {
