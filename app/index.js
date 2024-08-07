@@ -1,4 +1,4 @@
-export * from '@nextui-org/react';
+export * as Kappal from '@nextui-org/react';
 
 export { default as KappalAccordion } from './components/KappalAccordion';
 export { default as KappalAutoComplete } from './components/KappalAutoComplete';

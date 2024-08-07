@@ -31,7 +31,7 @@ fs.readdir(componentsDir, (err, files) => {
 import * as React from 'react';
 declare module '@kappalsoftware/next-ui-system' {
   ${typeDeclarations}
-  export * from '@nextui-org/react'; // Ensure all nextui-org/react types are included
+  export * as Kappal from '@nextui-org/react'; // Ensure all nextui-org/react types are included
 }
 `;
 

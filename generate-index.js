@@ -3,7 +3,7 @@ const path = require('path');
 
 const componentsDir = path.join(__dirname, 'app/components');
 const indexPath = path.join(__dirname, 'app', 'index.js');
-const defaultExports = "export * from '@nextui-org/react';\n";
+const defaultExports = "export * as Kappal from '@nextui-org/react';\n";
 
 fs.readdir(componentsDir, (err, files) => {
   if (err) {

@@ -11,5 +11,5 @@ export const KappalCard: React.FC<any>;
 export const KappalInput: React.FC<any>;
 export const KappalModal: React.FC<any>;
 export const KappalSelect: React.FC<any>;
-  export * from '@nextui-org/react'; // Ensure all nextui-org/react types are included
+  export * as Kappal from '@nextui-org/react'; // Ensure all nextui-org/react types are included
 }
