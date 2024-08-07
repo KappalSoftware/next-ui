@@ -8,4 +8,5 @@ export { default as KappalBreadcrumbs } from './components/KappalBreadcrumbs';
 export { default as KappalButton } from './components/KappalButton';
 export { default as KappalCard } from './components/KappalCard';
 export { default as KappalInput } from './components/KappalInput';
+export { default as KappalModal } from './components/KappalModal';
 export { default as KappalSelect } from './components/KappalSelect';
