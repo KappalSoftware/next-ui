@@ -3,6 +3,7 @@ const path = require('path');
 
 const componentsDir = path.join(__dirname, 'app/components');
 const indexPath = path.join(__dirname, 'app', 'index.js');
+const defaultExports = "export * from '@nextui-org/react';\n";
 
 fs.readdir(componentsDir, (err, files) => {
   if (err) {
@@ -17,7 +18,10 @@ fs.readdir(componentsDir, (err, files) => {
     })
     .join('\n');
 
-  fs.writeFile(indexPath, exportStatements, (err) => {
+    const content = `${defaultExports}\n${exportStatements}`;
+
+
+  fs.writeFile(indexPath, content, (err) => {
     if (err) {
       return console.error('Failed to write index.js:', err);
     }
