@@ -1,18 +1,23 @@
 const fs = require('fs');
 const path = require('path');
 
-const componentsDir = path.join(__dirname, 'app/components');
-const typesPath = path.join(__dirname, 'types', 'index.d.ts');
+// Paths
+const componentsDir = path.join(__dirname, 'app/components'); // Ensure this is correct
+const typesDir = path.join(__dirname, 'types');
+const typesPath = path.join(typesDir, 'index.d.ts');
 
-if (!fs.existsSync(path.join(__dirname, 'types'))) {
-  fs.mkdirSync(path.join(__dirname, 'types'));
+// Create types directory if it doesn't exist
+if (!fs.existsSync(typesDir)) {
+  fs.mkdirSync(typesDir);
 }
 
+// Read components directory
 fs.readdir(componentsDir, (err, files) => {
   if (err) {
     return console.error('Failed to read components directory:', err);
   }
 
+  // Filter and map type declarations
   const typeDeclarations = files
     .filter(file => file.endsWith('.ts') || file.endsWith('.tsx'))
     .map(file => {
@@ -21,8 +26,16 @@ fs.readdir(componentsDir, (err, files) => {
     })
     .join('\n');
 
-  const typeFileContent = `import * as React from 'react';\ndeclare module '@kappalsoftware/next-ui-system' {\n${typeDeclarations}\n}\n`;
+  // Generate type file content
+  const typeFileContent = `
+import * as React from 'react';
+declare module '@kappalsoftware/next-ui-system' {
+  ${typeDeclarations}
+  export * from '@nextui-org/react'; // Ensure all nextui-org/react types are included
+}
+`;
 
+  // Write to index.d.ts
   fs.writeFile(typesPath, typeFileContent, (err) => {
     if (err) {
       return console.error('Failed to write index.d.ts:', err);
